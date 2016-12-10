@@ -2,7 +2,7 @@
  
 悬浮窗权限兼容库
 
-** 检测 **
+**检测**
 
 API 23+(Android 6.0+/M) 使用 `Settings.canDrawOverlays`
 
@@ -10,7 +10,7 @@ API 19+(Android 4.4+/Kitkat) 通过反射使用 `AppOpsManager.checkOp`
 
 API < 19 时始终返回 true
  
-** 设置 **
+**设置**
 
 当未授权时需要用户去设置页开启授权
 
@@ -21,7 +21,7 @@ API 19+(Android 4.4+/Kitkat) 需要检测各Rom类型然后跳转到对应的设
 API < 19 时不做任何处理
 
 
-** 参考 **
+**参考**
 
 Android 悬浮窗权限各机型各系统适配大全
 http://blog.csdn.net/self_study/article/details/52859790
