@@ -10,7 +10,7 @@ API 19+(Android 4.4+/Kitkat) 通过反射使用 `AppOpsManager.checkOp`
 
 API < 19 时始终返回 true
  
-**设置**
+**授权**
 
 当未授权时需要用户去设置页开启授权
 
