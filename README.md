@@ -23,15 +23,17 @@ API < 19 时不做任何处理
 
 **参考**
 
-Android 悬浮窗权限各机型各系统适配大全
-http://blog.csdn.net/self_study/article/details/52859790
+Android 悬浮窗权限各机型各系统适配大全   
+http://blog.csdn.net/self_study/article/details/52859790    
 https://github.com/zhaozepeng/FloatWindowPermission
 
-Android 权限管理 —— AppOps
+Android 权限管理 —— AppOps   
 http://3dobe.com/archives/51/
 
-Android 4.3 隐藏功能 App Ops 分析
+Android 4.3 隐藏功能 App Ops 分析   
 https://mssun.me/blog/android-4-3-app-ops-analysis.html
+  
+http://androidxref.com/4.3_r2.1/xref/frameworks/base/core/java/android/app/AppOpsManager.java
 
 ![s](screenshot1.png) ![s](screenshot2.png) ![s](screenshot3.png)
 
