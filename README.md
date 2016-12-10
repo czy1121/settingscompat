@@ -2,6 +2,8 @@
  
 悬浮窗权限兼容库
 
+悬浮窗权限是特殊权限(Special Permissions)需要在manifest中申请并且通过发送Intent让用户在设置界面进行勾选
+
 **检测**
 
 API 23+(Android 6.0+/M) 使用 `Settings.canDrawOverlays`
@@ -26,6 +28,9 @@ API < 19 时不做任何处理
 Android 悬浮窗权限各机型各系统适配大全   
 http://blog.csdn.net/self_study/article/details/52859790    
 https://github.com/zhaozepeng/FloatWindowPermission
+
+Android M 权限最佳实践
+http://chen-wei.me/2016/11/10/android-permission-best-practice/
 
 Android 权限管理 —— AppOps   
 http://3dobe.com/archives/51/
