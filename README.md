@@ -18,7 +18,7 @@ API < 19 时始终返回 true
 
 API 23+(Android 6.0+/M) 去系统设置面板就好 `new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION)`
 
-API 19+(Android 4.4+/Kitkat) 需要检测各Rom类型然后跳转到对应的设置页面
+API 19+(Android 4.4+/Kitkat) 默认权限开启，有些Rom会默认禁用权限，需要检测各Rom类型然后跳转到对应的设置页面
 
 API < 19 时不做任何处理
 

@@ -118,7 +118,7 @@ public class OverlayPermissionCompat {
             return false;
         }
 
-        boolean startSafely(Context context, Intent intent) {
+        static boolean startSafely(Context context, Intent intent) {
             if (context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY).size() > 0) {
                 start(context, intent);
                 return true;
@@ -128,7 +128,7 @@ public class OverlayPermissionCompat {
             }
         }
 
-        void start(Context context, Intent intent) {
+        static void start(Context context, Intent intent) {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             if (context instanceof Activity) {
                 ((Activity) context).startActivityForResult(intent, sRequestCode);
@@ -138,7 +138,7 @@ public class OverlayPermissionCompat {
         }
 
         // 小米
-        void editForMiui(Context context) {
+        static void editForMiui(Context context) {
             int version = RomUtil.getMiuiVersion();
             Log.e(TAG, "miui version " + version);
             if (version == 5) {
@@ -162,7 +162,7 @@ public class OverlayPermissionCompat {
         final static String HUAWEI_SETTING_3_0 = "com.huawei.notificationmanager.ui.NotificationManagmentActivity";
 
         // 华为 http://blog.csdn.net/pkandroid/article/details/52014653
-        void editForEmui(Context context) {
+        static void editForEmui(Context context) {
             try {
                 Intent intent = new Intent();
                 // 悬浮窗管理页面
@@ -193,7 +193,7 @@ public class OverlayPermissionCompat {
         }
 
         // 魅族
-        void editForMeizu(Context context) {
+        static void editForMeizu(Context context) {
             Intent intent = new Intent("com.meizu.safe.security.SHOW_APPSEC");
             intent.setClassName("com.meizu.safe", "com.meizu.safe.security.AppSecActivity");
             intent.putExtra("packageName", context.getPackageName());
@@ -201,7 +201,7 @@ public class OverlayPermissionCompat {
         }
 
         // 360
-        void editForQihu(Context context) {
+        static void editForQihu(Context context) {
             Intent intent = new Intent();
             intent.setClassName("com.android.settings", "com.android.settings.Settings$OverlaySettingsActivity");
             start(context, intent);
@@ -209,7 +209,7 @@ public class OverlayPermissionCompat {
     }
 
     @TargetApi(Build.VERSION_CODES.M)
-    private static class IMPL23 extends IMPLBase {
+    private static class IMPL23 extends IMPL19 {
 
         @Override
         public boolean check(Context context) {
@@ -218,9 +218,13 @@ public class OverlayPermissionCompat {
 
         @Override
         public void request(Activity activity) {
-            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
-            intent.setData(Uri.parse("package:" + activity.getPackageName()));
-            activity.startActivityForResult(intent, sRequestCode);
+            if (RomUtil.isFlyme()) {
+                editForMeizu(activity);
+            } else {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+                intent.setData(Uri.parse("package:" + activity.getPackageName()));
+                activity.startActivityForResult(intent, sRequestCode);
+            }
         }
     }
 

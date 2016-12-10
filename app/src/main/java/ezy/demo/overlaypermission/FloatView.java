@@ -53,7 +53,9 @@ public class FloatView extends ImageView {
 
 
     public void attach() {
-        mWm.addView(this, mLp);
+        if (getParent() == null) {
+            mWm.addView(this, mLp);
+        }
         mWm.updateViewLayout(this, mLp);
         getWindowVisibleDisplayFrame(mRect);
         mRect.top += dp2px(50);

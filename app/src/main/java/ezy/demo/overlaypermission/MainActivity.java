@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.check).setOnClickListener(this);
         findViewById(R.id.request).setOnClickListener(this);
+        findViewById(R.id.hide).setOnClickListener(this);
 
         checkPermission();
 
@@ -43,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     void checkPermission() {
-        vFloat.detach();
         if (OverlayPermissionCompat.check(this)) {
             Log.e("ezy", "checkPermission = granted");
             vResult.setText("granted");
@@ -64,6 +64,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             break;
         case R.id.request:
             OverlayPermissionCompat.request(this);
+            break;
+        case R.id.hide:
+            vFloat.detach();
             break;
 
         }
