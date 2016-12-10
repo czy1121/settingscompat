@@ -1,6 +1,4 @@
-# OverlayPermissionCompat
- 
-[![](https://jitpack.io/v/czy1121/overlaypermission.svg)](https://jitpack.io/#czy1121/overlaypermission)
+# OverlayPermissionCompat [![](https://jitpack.io/v/czy1121/overlaypermission.svg)](https://jitpack.io/#czy1121/overlaypermission)
  
 悬浮窗权限兼容库
 
