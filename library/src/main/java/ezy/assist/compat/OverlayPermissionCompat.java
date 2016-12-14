@@ -102,17 +102,11 @@ public class OverlayPermissionCompat {
                 editForMeizu(activity);
             } else if (RomUtil.isQihu()) {
                 editForQihu(activity);
-            } else if(RomUtil.isOppo()) {
+            } else if (RomUtil.isOppo()) {
                 editForOppo(activity);
-            }else {
+            } else {
                 Log.e(TAG, "ROM no support~~");
             }
-        }
-        private void editForOppo(Context pContext) {
-            Intent intent = new Intent("com.coloros.safecenter");
-            intent.setClassName("com.coloros.safecenter", "com.coloros.safecenter.sysfloatwindow.FloatWindowListActivity");
-            intent.putExtra("packageName", pContext.getPackageName());
-            start(pContext, intent);
         }
 
         boolean checkOp(Context context, int op) {
@@ -213,6 +207,14 @@ public class OverlayPermissionCompat {
             Intent intent = new Intent();
             intent.setClassName("com.android.settings", "com.android.settings.Settings$OverlaySettingsActivity");
             start(context, intent);
+        }
+
+        // Oppo
+        static void editForOppo(Context pContext) {
+            Intent intent = new Intent("com.coloros.safecenter");
+            intent.setClassName("com.coloros.safecenter", "com.coloros.safecenter.sysfloatwindow.FloatWindowListActivity");
+            intent.putExtra("packageName", pContext.getPackageName());
+            start(pContext, intent);
         }
     }
 
