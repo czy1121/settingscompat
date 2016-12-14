@@ -40,7 +40,9 @@ public class RomUtil {
     public static boolean isQihu() {
         return Build.MANUFACTURER.toLowerCase().contains("qihu");
     }
-
+    public static boolean isOppo() {
+        return Build.MANUFACTURER.toLowerCase().contains("oppo");
+    }
 
     // 获取 华为(emui) 版本号, 获取失败返回 4.0
     public static double getEmuiVersion() {
