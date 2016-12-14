@@ -157,7 +157,7 @@ public class OverlayPermissionCompat {
                 Intent intent = new Intent("miui.intent.action.APP_PERM_EDITOR");
                 intent.putExtra("extra_pkgname", context.getPackageName());
                 intent.setClassName("com.miui.securitycenter", "com.miui.permcenter.permissions.AppPermissionsEditorActivity");
-                if (!startSafely(context, intent)){
+                if (!startSafely(context, intent)) {
                     intent.setClassName("com.miui.securitycenter", "com.miui.permcenter.permissions.PermissionsEditorActivity");
                     startSafely(context, intent);
                 }
@@ -228,6 +228,8 @@ public class OverlayPermissionCompat {
         public void request(Activity activity) {
             if (RomUtil.isFlyme()) {
                 editForMeizu(activity);
+            } else if (RomUtil.isMiui()) {
+                editForMiui(activity);
             } else {
                 Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
                 intent.setData(Uri.parse("package:" + activity.getPackageName()));
