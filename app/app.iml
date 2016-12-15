@@ -132,10 +132,5 @@
     <orderEntry type="library" exported="" name="recyclerview-v7-25.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-core-utils-25.0.1" level="project" />
     <orderEntry type="module" module-name="library" exported="" />
-    <orderEntry type="library" exported="" name="appcompat-v7-24.0.0" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-24.0.0" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-24.0.0" level="project" />
-    <orderEntry type="library" exported="" name="support-vector-drawable-24.0.0" level="project" />
-    <orderEntry type="library" exported="" name="animated-vector-drawable-24.0.0" level="project" />
   </component>
 </module>

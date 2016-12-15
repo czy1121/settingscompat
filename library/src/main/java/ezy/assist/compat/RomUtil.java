@@ -106,11 +106,14 @@ public class RomUtil {
             sName = ROM_VIVO;
         } else if (!TextUtils.isEmpty(sVersion = getProp(KEY_VERSION_SMARTISAN))){
             sName = ROM_SMARTISAN;
-        } else if (!TextUtils.isEmpty(sVersion = getProp(KEY_VERSION_FLYME))){
-            sName = ROM_FLYME;
         } else {
             sVersion = Build.DISPLAY;
-            sName = Build.MANUFACTURER.toUpperCase();
+            if (sVersion.toUpperCase().contains(ROM_FLYME)) {
+                sName = ROM_FLYME;
+            } else {
+                sVersion = Build.UNKNOWN;
+                sName = Build.MANUFACTURER.toUpperCase();
+            }
         }
         return sName.equals(rom);
     }
