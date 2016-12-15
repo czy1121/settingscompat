@@ -13,52 +13,71 @@
         android:orientation="horizontal">
         <TextView
             android:id="@+id/check"
-            android:layout_width="150dp"
+            android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="#673AB7"
             android:gravity="center"
             android:tag="top"
-            android:text="check"
+            android:text="检测"
             android:textColor="#ffffff"
             android:textColorHint="#ff0000"
-            android:textSize="18dp"/>
+            android:textSize="14dp"/>
         <TextView
-            android:id="@+id/request"
-            android:layout_width="150dp"
+            android:id="@+id/manage"
+            android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="#673AB7"
             android:gravity="center"
             android:tag="top"
-            android:text="request"
+            android:text="去授权"
             android:textColor="#ffffff"
             android:textColorHint="#ff0000"
-            android:textSize="18dp"/>
+            android:textSize="14dp"/>
         <TextView
-            android:id="@+id/hide"
-            android:layout_width="150dp"
+            android:id="@+id/toggle"
+            android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="#673AB7"
             android:gravity="center"
-            android:text="hide"
+            android:text="切换状态"
             android:textColor="#ffffff"
             android:textColorHint="#ff0000"
-            android:textSize="18dp"/>
+            android:textSize="14dp"/>
+        <TextView
+            android:id="@+id/detail"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#673AB7"
+            android:gravity="center"
+            android:text="应用信息"
+            android:textColor="#ffffff"
+            android:textColorHint="#ff0000"
+            android:textSize="14dp"/>
     </LinearLayout>
 
     <TextView
         android:id="@+id/result"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:gravity="center"
         android:hint="check result"
         android:tag="middle"
         android:textColor="#3F51B5"
         android:textSize="18dp"/>
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="check result"
+        android:textSize="12dp"/>
 </LinearLayout>

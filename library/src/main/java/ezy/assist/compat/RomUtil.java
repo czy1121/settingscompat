@@ -11,12 +11,28 @@ import java.io.InputStreamReader;
 public class RomUtil {
     private static final String TAG = "RomUtil";
 
+    public static final String ROM_MIUI = "MIUI";
+    public static final String ROM_EMUI = "EMUI";
+    public static final String ROM_FLYME = "FLYME";
+    public static final String ROM_OPPO = "OPPO";
+    public static final String ROM_SMARTISAN = "SMARTISAN";
+
+    public static final String ROM_VIVO = "VIVO";
+    public static final String ROM_QIHU = "QIHU";
+
+    public static final String ROM_LENOVO = "LENOVO";
+    public static final String ROM_SAMSUNG = "SAMSUNG";
+
+    private static final String KEY_VERSION_MIUI = "ro.miui.ui.version.name";
+    private static final String KEY_VERSION_EMUI = "ro.build.version.emui";
+    private static final String KEY_VERSION_OPPO = "ro.build.version.opporom";
+    private static final String KEY_VERSION_SMARTISAN = "ro.smartisan.version";
+    private static final String KEY_VERSION_VIVO = "ro.vivo.os.version";
+    private static final String KEY_VERSION_FLYME = "ro.build.display.id";
 
 
-    private static final String KEY_EMUI_VERSION_NAME = "ro.build.version.emui";
     private static final String KEY_EMUI_VERSION_CODE = "ro.build.hw_emui_api_level";
 
-    private static final String KEY_MIUI_VERSION_NAME = "ro.miui.ui.version.name";
     private static final String KEY_MIUI_VERSION_CODE = "ro.miui.ui.version.code";
     private static final String KEY_MIUI_HANDY_MODE_SF = "ro.miui.has_handy_mode_sf";
     private static final String KEY_MIUI_REAL_BLUR = "ro.miui.has_real_blur";
@@ -24,45 +40,79 @@ public class RomUtil {
     private static final String KEY_FLYME_PUBLISHED = "ro.flyme.published";
     private static final String KEY_FLYME_FLYME = "ro.meizu.setupwizard.flyme";
 
+    private static final String KEY_FLYME_ICON_FALG = "persist.sys.use.flyme.icon";
+    private static final String KEY_FLYME_SETUP_FALG = "ro.meizu.setupwizard.flyme";
+    private static final String KEY_FLYME_PUBLISH_FALG = "ro.flyme.published";
+
+    private static final String KEY_VIVO_OS_NAME = "ro.vivo.os.name";
+    private static final String KEY_VIVO_OS_VERSION = "ro.vivo.os.version";
+    private static final String KEY_VIVO_ROM_VERSION = "ro.vivo.rom.version";
 
     public static boolean isEmui() {
-        return !TextUtils.isEmpty(getProp(KEY_EMUI_VERSION_NAME));
+        return check(ROM_EMUI);
     }
 
     public static boolean isMiui() {
-        return !TextUtils.isEmpty(getProp(KEY_MIUI_VERSION_NAME));
+        return check(ROM_MIUI);
+    }
+
+    public static boolean isVivo() {
+        return check(ROM_VIVO);
+    }
+
+    public static boolean isOppo() {
+        return check(ROM_OPPO);
     }
 
     public static boolean isFlyme() {
-        return Build.DISPLAY.toLowerCase().contains("flyme");
+        return check(ROM_FLYME);
     }
 
     public static boolean isQihu() {
-        return Build.MANUFACTURER.toLowerCase().contains("qihu");
+        return check(ROM_QIHU);
     }
 
-
-    // 获取 华为(emui) 版本号, 获取失败返回 4.0
-    public static double getEmuiVersion() {
-        String version = getProp(KEY_EMUI_VERSION_NAME);
-        try {
-            return Double.parseDouble(version.substring(version.indexOf("_") + 1));
-        } catch (Exception e) {
-            Log.e(TAG, "get emui version code error, version : " + version);
-        }
-        return 4.0;
+    public static boolean isSmartisan() {
+        return check(ROM_SMARTISAN);
     }
 
-
-    // 获取小米(miui)版本号，获取失败返回 -1
-    public static int getMiuiVersion() {
-        String version = getProp(KEY_MIUI_VERSION_NAME);
-        try {
-            return Integer.parseInt(version.substring(1));
-        } catch (Exception e) {
-            Log.e(TAG, "get miui version code error, version : " + version);
+    private static String sName;
+    public static String getName() {
+        if (sName == null) {
+            check("");
         }
-        return -1;
+        return sName;
+    }
+    private static String sVersion;
+    public static String getVersion() {
+        if (sVersion == null) {
+            check("");
+        }
+        return sVersion;
+    }
+
+    public static boolean check(String rom) {
+        if (sName != null) {
+            return sName.equals(rom);
+        }
+
+        if (!TextUtils.isEmpty(sVersion = getProp(KEY_VERSION_MIUI))) {
+            sName = ROM_MIUI;
+        } else if (!TextUtils.isEmpty(sVersion = getProp(KEY_VERSION_EMUI))){
+            sName = ROM_EMUI;
+        } else if (!TextUtils.isEmpty(sVersion = getProp(KEY_VERSION_OPPO))){
+            sName = ROM_OPPO;
+        } else if (!TextUtils.isEmpty(sVersion = getProp(KEY_VERSION_VIVO))){
+            sName = ROM_VIVO;
+        } else if (!TextUtils.isEmpty(sVersion = getProp(KEY_VERSION_SMARTISAN))){
+            sName = ROM_SMARTISAN;
+        } else if (!TextUtils.isEmpty(sVersion = getProp(KEY_VERSION_FLYME))){
+            sName = ROM_FLYME;
+        } else {
+            sVersion = Build.DISPLAY;
+            sName = Build.MANUFACTURER.toUpperCase();
+        }
+        return sName.equals(rom);
     }
 
     public static String getProp(String name) {
@@ -87,4 +137,15 @@ public class RomUtil {
         }
         return line;
     }
+    //    private static Properties props = new Properties();
+    //    static {
+    //        try {
+    //            props.load(new FileInputStream(new File("/system/build.prop")));
+    //        } catch (IOException e) {
+    //
+    //        }
+    //    }
+    //    public static String getProp(String name) {
+    //        return props.getProperty(name, Build.UNKNOWN);
+    //    }
 }

@@ -2,8 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group='com.github.czy1121'
-version='1.0.1'
-archivesBaseName='overlaypermission'
+version='1.0.0'
+archivesBaseName='settingscompat'
 
 android {
     compileSdkVersion 24

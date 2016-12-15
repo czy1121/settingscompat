@@ -1,4 +1,4 @@
-package ezy.demo.overlaypermission;
+package ezy.demo.settingscompat;
 
 import android.content.Context;
 import android.graphics.PixelFormat;
@@ -59,6 +59,7 @@ public class FloatView extends ImageView {
         mWm.updateViewLayout(this, mLp);
         getWindowVisibleDisplayFrame(mRect);
         mRect.top += dp2px(50);
+        mLp.y = dp2px(150);
         mLp.x = mRect.width() - dp2px(55);
         reposition();
     }

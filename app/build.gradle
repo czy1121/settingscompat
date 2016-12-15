@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.0"
 
     defaultConfig {
-        applicationId "ezy.demo.overlaypermission"
+        applicationId "ezy.demo.settingscompat"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
