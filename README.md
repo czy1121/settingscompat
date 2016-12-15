@@ -1,8 +1,8 @@
 # SettingsCompat [![](https://jitpack.io/v/czy1121/settingscompat.svg)](https://jitpack.io/#czy1121/settingscompat)
  
-特殊权限(Special Permissions)兼容库，悬浮窗权限(SYSTEM_ALERT_WINDOW)与系统设置修改权限(WRITE_SETTINGS)
+特殊权限(Special Permissions)兼容库，悬浮窗权限(SYSTEM_ALERT_WINDOW)与系统设置修改权限(WRITE_SETTINGS)   
 
-Android 6.0以前只要在manifest中申请了权限就是默认开启的 
+Android 6.0以前只要在manifest中申请了权限就是默认开启的     
 Android 6.0+需要在manifest中申请并且通过发送Intent让用户在设置界面进行勾选  
 
 ## 适配
@@ -44,7 +44,7 @@ API 23+ 本来去系统设置面板就好了，但有些Rom会用自带的权限
 主要是测了悬浮窗权限    
 
 |设备|系统版本|ROM版本|状态|跳转|
-|---|---|---|---|
+|---|---|---|---|---|
 |华为 荣耀7i|6.0.1|4.0|默认禁用|ok|
 |华为 荣耀畅玩5X|5.1.1|4.0.1|默认禁用|ok|
 |华为 Ascend P7|5.1.1|3.1|默认禁用|ok |
@@ -81,6 +81,8 @@ http://mtc.baidu.com/tinypace/main#/?from=DaoHang
 
 腾讯优测真机
 http://remote.utest.qq.com/deviceSearch?type=remote
+
+
 
 ![s](screenshot.png) 
  
