@@ -49,6 +49,7 @@ API 23+ 本来去系统设置面板就好了，但有些Rom会用自带的权限
 |华为 荣耀畅玩5X|5.1.1|4.0.1|默认禁用|ok|
 |华为 Ascend P7|5.1.1|3.1|默认禁用|ok |
 |华为 荣耀6|5.1.1|3.1|默认禁用|ok|
+|华为 荣耀6Plus|4.4.4|3.0|默认禁用|ok|
 |华为 畅享5S|5.1|3.0|默认禁用|ok|
 |华为 P8|5.0.1|3.1|默认可用|ok,无`安全中心`| 
 |小米 MI 5|6.0|V7|默认禁用|ok|
@@ -94,7 +95,7 @@ repositories {
     maven { url "https://jitpack.io" }
 } 
 dependencies {
-    compile 'com.github.czy1121:settingscompat:1.1.1'
+    compile 'com.github.czy1121:settingscompat:1.1.2'
 }
 ```
     

@@ -180,12 +180,16 @@ public class SettingsCompat {
     // 华为
     private static boolean manageDrawOverlaysForEmui(Context context) {
         Intent intent = new Intent();
-        intent.setClassName(HUAWEI_PACKAGE, "com.huawei.systemmanager.addviewmonitor.AddViewMonitorActivity");
-        if (startSafely(context, intent)) {
-            return true;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            intent.setClassName(HUAWEI_PACKAGE, "com.huawei.systemmanager.addviewmonitor.AddViewMonitorActivity");
+            if (startSafely(context, intent)) {
+                return true;
+            }
         }
+        // Huawei Honor P6|4.4.4|3.0
         intent.setClassName(HUAWEI_PACKAGE, "com.huawei.notificationmanager.ui.NotificationManagmentActivity");
-        if (!startSafely(context, intent)) {
+        intent.putExtra("showTabsNumber", 1);
+        if (startSafely(context, intent)) {
             return true;
         }
         intent.setClassName(HUAWEI_PACKAGE, "com.huawei.permissionmanager.ui.MainActivity");
