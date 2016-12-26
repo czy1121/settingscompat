@@ -28,6 +28,8 @@ public class RomUtil {
     private static final String KEY_VERSION_OPPO = "ro.build.version.opporom";
     private static final String KEY_VERSION_SMARTISAN = "ro.smartisan.version";
     private static final String KEY_VERSION_VIVO = "ro.vivo.os.version";
+    private static final String KEY_VERSION_GIONEE = "ro.gn.sv.version";
+    private static final String KEY_VERSION_LENOVO = "ro.lenovo.lvp.version";
     private static final String KEY_VERSION_FLYME = "ro.build.display.id";
 
 
@@ -134,7 +136,7 @@ public class RomUtil {
                 try {
                     input.close();
                 } catch (IOException e) {
-                    Log.e(TAG, "Exception while closing InputStream", e);
+                    e.printStackTrace();
                 }
             }
         }

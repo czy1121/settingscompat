@@ -60,7 +60,7 @@ API 23+ 本来去系统设置面板就好了，但有些Rom会用自带的权限
 |魅族 MX4|5.1|5.1.5|默认禁用|ok|
 |魅族 魅蓝Note2|5.1|5.1.5|默认禁用|ok|
 |魅族 M1|4.4.4|4.2.1|默认可用|ok<br>悬浮窗不能覆盖到其它应用上<br>详情页有悬浮窗权限设置，禁用后无影响|
-|锤子 坚果|5.1.1|2.5.3|默认禁用|fail，到达悬浮窗管理页，但随后奔溃|
+|锤子 坚果|5.1.1|2.5.3|默认禁用|ok|
 |锤子 坚果|4.4.4|2.1.2|默认禁用|ok|
 |OPPO A53|5.1.1|2.1|默认可用|ok| 
 |OPPO R7s|4.4.4|2.1|默认可用|ok|
@@ -95,7 +95,7 @@ repositories {
     maven { url "https://jitpack.io" }
 } 
 dependencies {
-    compile 'com.github.czy1121:settingscompat:1.1.2'
+    compile 'com.github.czy1121:settingscompat:1.1.3'
 }
 ```
     
