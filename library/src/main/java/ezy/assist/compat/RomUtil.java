@@ -18,7 +18,7 @@ public class RomUtil {
     public static final String ROM_SMARTISAN = "SMARTISAN";
 
     public static final String ROM_VIVO = "VIVO";
-    public static final String ROM_QIHU = "QIHU";
+    public static final String ROM_QIKU = "QIKU";
 
     public static final String ROM_LENOVO = "LENOVO";
     public static final String ROM_SAMSUNG = "SAMSUNG";
@@ -70,8 +70,8 @@ public class RomUtil {
         return check(ROM_FLYME);
     }
 
-    public static boolean isQihu() {
-        return check(ROM_QIHU);
+    public static boolean isQiku() {
+        return check(ROM_QIKU) || check("360");
     }
 
     public static boolean isSmartisan() {

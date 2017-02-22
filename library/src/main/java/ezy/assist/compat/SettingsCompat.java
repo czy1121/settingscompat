@@ -101,7 +101,7 @@ public class SettingsCompat {
         if (RomUtil.isVivo()) {
             return manageDrawOverlaysForVivo(context);
         }
-        if (RomUtil.isQihu()) {
+        if (RomUtil.isQiku()) {
             return manageDrawOverlaysForQihu(context);
         }
         if (RomUtil.isSmartisan()) {
@@ -201,8 +201,11 @@ public class SettingsCompat {
 
     // VIVO
     private static boolean manageDrawOverlaysForVivo(Context context) {
+        // 不支持直接到达悬浮窗设置页，只能到 i管家 首页
         Intent intent = new Intent("com.iqoo.secure");
-        intent.setClassName("com.iqoo.secure", "com.iqoo.secure.MainGuideActivity");
+        intent.setClassName("com.iqoo.secure", "com.iqoo.secure.MainActivity");
+        // com.iqoo.secure.ui.phoneoptimize.SoftwareManagerActivity
+        // com.iqoo.secure.ui.phoneoptimize.FloatWindowManager
         return startSafely(context, intent);
     }
 

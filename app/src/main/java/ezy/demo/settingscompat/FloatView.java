@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.PixelFormat;
 import android.graphics.Rect;
 import android.os.Build;
+import android.support.v7.widget.AppCompatImageView;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,7 +13,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class FloatView extends ImageView {
+public class FloatView extends AppCompatImageView {
 
 
     private Rect mRect = new Rect();

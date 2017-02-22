@@ -95,7 +95,7 @@ repositories {
     maven { url "https://jitpack.io" }
 } 
 dependencies {
-    compile 'com.github.czy1121:settingscompat:1.1.3'
+    compile 'com.github.czy1121:settingscompat:1.1.4'
 }
 ```
     
