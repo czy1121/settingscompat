@@ -73,7 +73,7 @@ public class SettingsCompat {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
             intent.setData(Uri.parse("package:" + context.getPackageName()));
-            context.startActivity(intent);
+            context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         }
     }
 
@@ -81,7 +81,7 @@ public class SettingsCompat {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
             intent.setData(Uri.parse("package:" + context.getPackageName()));
-            context.startActivity(intent);
+            context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         }
     }
 
